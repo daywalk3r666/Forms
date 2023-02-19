@@ -14,7 +14,8 @@ android {
         targetSdk = 33
         versionCode = 10
         versionName = "1.0"
-        resourceConfigurations.addAll(listOf("en")
+        setProperty("archivesBaseName", "Forms-$versionName")
+        resourceConfigurations.addAll(listOf("en"))
 
     }
     signingConfigs {
@@ -43,12 +44,7 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-    applicationVariants.all {
-        outputs.all {
-            (this as? ApkVariantOutputImpl)?.outputFileName =
-                "Forms_${versionName}_${buildType.name}.apk"
-        }
-    }
+    
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
