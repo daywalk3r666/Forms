@@ -6,14 +6,14 @@ plugins {
 android {
     namespace = "de.daywalk3r666.forms"
     compileSdk = 33
-    buildToolsVersion "33.0.0"
+    buildToolsVersion = "33.0.0"
 
     defaultConfig {
         applicationId = "de.daywalk3r666.forms"
         minSdk = 1
         targetSdk = 33
         versionCode = 10
-        versionName "1.0"
+        versionName = "1.0"
         resConfigs = "en"
             
 signingConfigs {
@@ -62,7 +62,7 @@ signingConfigs {
     }
 
     lintOptions {
-        disable "SetJavaScriptEnabled"
+        SetJavaScriptEnabled = false
     }
 
 }
