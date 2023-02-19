@@ -36,17 +36,17 @@ signingConfigs {
     
     buildTypes {
         debug {
-            minifyEnabled = false
-            shrinkResources = false
-            crunchPngs = false
+            isMinifyEnabled = false
+            IsShrinkResources = false
+            isCrunchPngs = false
             signingConfig = signingConfigs.findByName("gh-actions")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
 
         release {
-            minifyEnabled = true
-            shrinkResources = true
-            crunchPngs = true
+            isMinifyEnabled = true
+            isShrinkResources = true
+            isCrunchPngs = true
             signingConfig = signingConfigs.findByName("gh-actions")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
