@@ -15,8 +15,9 @@ android {
         versionCode = 10
         versionName = "1.0"
         resourceConfigurations.addAll(listOf("en")
-            
-signingConfigs {
+
+    }
+    signingConfigs {
         create("gh-actions") {
             storeFile = file("${System.getenv("RUNNER_TEMP")}/keystore/keystore.jks")
             storePassword = System.getenv("KEYSTORE_PASSWORD")
@@ -24,15 +25,6 @@ signingConfigs {
             keyPassword = System.getenv("SIGNING_KEY_PASSWORD")
         }
     } 
-
-    }
-    
-       applicationVariants.all {
-        outputs.all {
-            (this as? ApkVariantOutputImpl)?.outputFileName =
-                "Forms_${versionName}_${buildType.name}.apk"
-        }
-    }
     
     buildTypes {
         debug {
@@ -49,6 +41,12 @@ signingConfigs {
             isCrunchPngs = true
             signingConfig = signingConfigs.findByName("gh-actions")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
+    applicationVariants.all {
+        outputs.all {
+            (this as? ApkVariantOutputImpl)?.outputFileName =
+                "Forms_${versionName}_${buildType.name}.apk"
         }
     }
 
