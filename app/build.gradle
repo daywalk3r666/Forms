@@ -15,9 +15,15 @@ android {
         versionCode 10
         versionName "1.0"
         resConfigs 'en'
-        setProperty('archivesBaseName', 'Forms_' + versionName)
+            
     }
-
+    
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "Forms-${variant.versionName}.apk"
+        }
+    }
+    
     buildTypes {
         debug {
             minifyEnabled false
