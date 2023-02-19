@@ -55,8 +55,8 @@ android {
         jvmTarget = "11"
     }
 
-    lintOptions {
-        SetJavaScriptEnabled = false
+    lint {
+        disable = "SetJavaScriptEnabled"
     }
 
 }
