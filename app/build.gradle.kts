@@ -14,7 +14,7 @@ android {
         targetSdk = 33
         versionCode = 10
         versionName = "1.0"
-        resConfigs = "en"
+        resourceConfigurations.addAll(listOf("en")
             
 signingConfigs {
         create("gh-actions") {
@@ -37,7 +37,7 @@ signingConfigs {
     buildTypes {
         debug {
             isMinifyEnabled = false
-            IsShrinkResources = false
+            isShrinkResources = false
             isCrunchPngs = false
             signingConfig = signingConfigs.findByName("gh-actions")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
