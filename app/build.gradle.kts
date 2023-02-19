@@ -56,7 +56,7 @@ android {
     }
 
     lint {
-        disable = "SetJavaScriptEnabled"
+      SetJavaScriptEnabled = false
     }
 
 }
